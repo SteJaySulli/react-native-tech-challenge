@@ -2,16 +2,20 @@
 
 ## Background Questions
 
-Question 1: Please explain what is wrong with this code and what the observed behaviour might be in a component that included it:
+**Question 1**: 
+Please explain what is wrong with this code and what the observed behaviour might be in a component that included it:
 ```javascript
 this.setState({count: this.state.count + 1});
 ```
 
-Answer 1: Because `this.setState()` could be called asynchronously, the contents of `this.state.count` may not be the up-to-date value that is expected, meaning that the count may not be updated correctly. This could lead to a bug where the count would occasionally fail to be incremented, and this may not be obvious to the end user making for a hard bug to track down. The correct solution to this issue is to use a function argument to `setState` which passes the state and props in as arguments, ensuring that the contents is reliable for the execution flow.
+**Answer 1**: 
+Because `this.setState()` could be called asynchronously, the contents of `this.state.count` may not be the up-to-date value that is expected, meaning that the count may not be updated correctly. This could lead to a bug where the count would occasionally fail to be incremented, and this may not be obvious to the end user making for a hard bug to track down. The correct solution to this issue is to use a function argument to `setState` which passes the state and props in as arguments, ensuring that the contents is reliable for the execution flow.
 
-Question 2: Can you please explain how redux works, assuming you were talking to a non-technical audience.
+**Question 2**: 
+Can you please explain how redux works, assuming you were talking to a non-technical audience.
 
-Answer 2: Redux manages data which an application needs to function. It works by ensuring data is centralised (held together in one place), and ensuring that any changes to that data are done in a uniform and reliable way. This has the effect of making sure that the data the app relies on is always in a state that is ready to be used, and because operations using that data are done in a uniform way, it reduces the chances for error along the way.
+**Answer 2**: 
+Redux manages data which an application needs to function. It works by ensuring data is centralised (held together in one place), and ensuring that any changes to that data are done in a uniform and reliable way. This has the effect of making sure that the data the app relies on is always in a state that is ready to be used, and because operations using that data are done in a uniform way, it reduces the chances for error along the way.
 
 ## Developer Notes
 
